@@ -1,7 +1,8 @@
-<h1>Create a new Figure</h1>
+<h1>Edit a Figure</h1>
 
-<form action="/figures" method="POST">
-  <label>Name:</label><input type="text" id="figure_name" name="figure[name]">
+<form action="/figures/#{@figure.id}" method="POST">
+<input id="hidden" type="hidden" name="_method" value="patch">
+  <label>Name:</label><input type="text" id="figure_name" value="<%=@figure.name%>" name="figure[name]">
 
 <br></br>
 
@@ -16,7 +17,7 @@ Or create a new title:
 
 <br></br>
 
-<label>Title:</label><input type="text" id="new_title" name="title[name]">
+<label>Title:</label><input type="text" id="new_title" value="<%=title.id%>" name="title[name]">
 
 <br></br>
 
@@ -35,5 +36,5 @@ Or create a new landmark:
 
 <br></br>
 
-<input type="submit" value="Create New Figure">
+<input type="submit" value="Edit Figure">
 </form>
