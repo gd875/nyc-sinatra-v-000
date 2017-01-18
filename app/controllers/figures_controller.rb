@@ -30,7 +30,7 @@ class FiguresController < ApplicationController
     end
    @figure.save
     # flash[:message] = "Successfully created song."
-    redirect to "figures/#{@figure.id}"
+    redirect to "/figures/#{@figure.id}"
   end
 
     get '/figures/:id' do
@@ -53,7 +53,7 @@ class FiguresController < ApplicationController
               else
                 @figure.titles << Title.find_by(name: params["title"]["name"]) #set @figure.title to existing title
               end
-            end
+        end
 
         if !params["landmark"]["name"].empty?
             if !Landmark.find_by(name: params["landmark"]["name"]) #if landmark doesn't exist
@@ -63,8 +63,7 @@ class FiguresController < ApplicationController
           end
         end
        @figure.save
-
-        redirect to "figures/#{@figure.id}"
+        redirect to "/figures/#{@figure.id}"
     end
 
 end

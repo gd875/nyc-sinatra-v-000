@@ -1,8 +1,16 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Landmarks</th>
   </tr>
   <tr>
-    <td><%= @figure.name %></td>
+    <td></td>
+    <td><%= @figure.landmarks %></td>
   </tr>
 <table>
+
+<h1><%= @figure.name %></h1>
+<h3>Landmarks:</h3>
+<% @figure.landmarks.each do |landmark| %>
+<p><%= landmark.name %></p>
+<% end %>
